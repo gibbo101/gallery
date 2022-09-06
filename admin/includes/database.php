@@ -1,11 +1,16 @@
 <?php
 
-require_once("config.php");
+require_once("new_config.php");
 
 class Database
 {
 
   public $connection;
+
+  function __construct() 
+  {
+    $this->open_db_connection();
+  }
 
   public function open_db_connection()
   {
@@ -19,5 +24,3 @@ class Database
 
 
 $database = new Database();
-
-$databse->open_db_connection();
